@@ -51,6 +51,7 @@ class OpenBalance extends Component {
         this.hideComponent = this.hideComponent.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleRChange = this.handleRChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         //this.handcredit = this.handcredit.bind(this);
     }
 
@@ -117,7 +118,12 @@ class OpenBalance extends Component {
               }
           }))
     }
-
+    
+    handleSubmit = (e)=> {
+        e.preventDefault()
+        const data = this.state
+        console.log('data for json',data)
+    }
 
     render(){
         //console.log(taskdata.Arrow1);
@@ -282,7 +288,7 @@ class OpenBalance extends Component {
 
                     <div>
                         <div>
-                            <button id='iss'><Icon class='iss' iconName="Lifesaver" />Save</button>                                                        
+                            <button onClick = {this.handleSubmit} id='iss'><Icon class='iss' iconName="Lifesaver" />Save</button>                                                        
                         </div>                        
                     </div>
                 </div>
